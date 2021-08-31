@@ -1,6 +1,6 @@
-import React from "react";
 import styles from "../ImageGallery/imageGallery.module.css";
 import { ImageGalleryItem } from "../ImageGalleryItem/ImageGalleryItem.js";
+import PropTypes from "prop-types";
 
 export function ImageGallery({ images, imageSelected }) {
   return (
@@ -8,9 +8,7 @@ export function ImageGallery({ images, imageSelected }) {
       <ul className={styles.imageGallery}>
         {images.map((image) => (
           <ImageGalleryItem
-            id={image.id}
             key={image.id}
-            src={image.webformatURL}
             webformatURL={image.webformatURL}
             largeImageURL={image.largeImageURL}
             onClick={imageSelected}
@@ -20,3 +18,7 @@ export function ImageGallery({ images, imageSelected }) {
     </>
   );
 }
+ImageGallery.propTypes = {
+  images: PropTypes.array.isRequired,
+  imageSelected: PropTypes.func.isRequired,
+};

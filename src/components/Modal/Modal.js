@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 
 const modalRoot = document.querySelector("#modal-root");
 
-class Modal extends Component {
+export class Modal extends Component {
   componentDidMount() {
     window.addEventListener("keydown", this.handleKeyDown);
   }
@@ -33,4 +33,3 @@ class Modal extends Component {
     );
   }
 }
-export { Modal };

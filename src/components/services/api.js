@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const fetchImagesQuery = (searchQuery, page = 1) => {
+const fetchImagesQuery = async (searchQuery, page) => {
   const API_KEY = "22317274-5f5939ff79d612c3aacb02224";
   return axios
     .get(
@@ -8,3 +8,4 @@ export const fetchImagesQuery = (searchQuery, page = 1) => {
     )
     .then((response) => response.data.hits);
 };
+export { fetchImagesQuery };
